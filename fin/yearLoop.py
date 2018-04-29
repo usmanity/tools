@@ -1,14 +1,15 @@
-def yearLoop(startPrice, gainer):
+def yearLoop(startPrice, gainer, years = 1):
   price = startPrice
-  print("Start price: ", startPrice)
-  print("Change per month (percentage): ", gainer);
-  for i in range(1, 12):
-    print("For month %d, price is %d" % (i, price))
+  print("Start price: %d" % startPrice)
+  print("Change per month (percentage): %.2f" % gainer);
+  for i in range(1, 12 * years):
+    print("For month %d, price is %.2f" % (i, price))
     price = price + (price * gainer / 100.0)
-  print("Started with %d, ended with %d, difference of %d" % (startPrice, price, price - startPrice))
+  print("Started with %.2f, ended with %.2f, difference of %.2f" % (startPrice, price, price - startPrice))
   return price
 
 input_price = input("What's your start amount? ")
 input_gainer = input("What percentage are you moving per month? ")
+input_years = input("How many years? ")
 
-yearLoop(input_price, input_gainer)
+yearLoop(input_price, input_gainer, input_years)
