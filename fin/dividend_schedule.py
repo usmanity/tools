@@ -14,7 +14,7 @@ def getTimestamp(humanReadableDate):
 data = sys.stdin.readlines()
 
 # for making sure I'm seeing things inside this script
-print("-------PRINTING DATA-----------")
+print("------- Dividend Info -------")
 
 quoteList = []
 
