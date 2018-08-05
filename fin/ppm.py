@@ -1,6 +1,6 @@
 while(True):
-        stock_price = float(raw_input('Stock price: '))
-        dividend_per_month = float(raw_input('Dividend per month, in cents: '))
+        stock_price = float(input('Stock price: '))
+        dividend_per_month = float(input('Dividend per month, in cents: '))
 
         ppm = dividend_per_month / stock_price
 
