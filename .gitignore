@@ -1,3 +1,4 @@
 people.txt
 node_modules/
 fin/cached/
+.env
