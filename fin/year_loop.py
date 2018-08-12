@@ -8,8 +8,8 @@ def yearLoop(startPrice, gainer, years = 1):
   print("Started with %.2f, ended with %.2f, difference of %.2f" % (startPrice, price, price - startPrice))
   return price
 
-input_price = input("What's your start amount? ")
-input_gainer = input("What percentage are you moving per month? ")
-input_years = input("How many years? ")
+input_price  = int(input("What's your start amount? "))
+input_gainer = float(input("What percentage are you moving per month? "))
+input_years  = int(input("How many years? "))
 
 yearLoop(input_price, input_gainer, input_years)
