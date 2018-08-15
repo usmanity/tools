@@ -42,4 +42,4 @@ miles_needed_per_day = round((float(goal_miles) - float(miles_this_year)) / floa
 print(f"Days until Christmas: {days_until_xmas} days")
 print(f"Effective days left: {effective_days} days")
 print(f"Miles so far: ~ {miles_this_year} miles")
-print(f"Miles needed to ride everyday: {miles_needed_per_day} miles per days")
+print(f"Miles needed to ride everyday: {miles_needed_per_day} miles per day")
