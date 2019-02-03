@@ -7,7 +7,7 @@ const argv = require('yargs').argv;
 const spawn = require('child_process').spawn;
 
 // constants
-const FAVE_FILEPATH = '/Users/muhammad/Dropbox (Personal)/code/usmanity.github.com/fave.html';
+const FAVE_FILEPATH = '/Users/muhammad/github/usmanity.github.com/fave.html';
 
 const addFavorite = (fave) => {
     fs.exists(FAVE_FILEPATH, (exists) => {
