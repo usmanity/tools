@@ -1,9 +1,11 @@
 # tools
-Small tools and scripts to help with everyday tasks.  
+
+Small tools and scripts to help with everyday tasks.
 
 Instructions for each script should be included inside itself.
 
-**fin**  
-The `fin` directory contains finance related tools, 
-please note that these are created for fun not profit so they might 
-have mistakes in them.
+### Setup
+
+Update path if you'd like to run these without being in the directory.
+
+`export PATH="$HOME/github/tools:$PATH"`

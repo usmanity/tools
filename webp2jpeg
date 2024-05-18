@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Check if FFmpeg is installed
+if ! command -v ffmpeg &> /dev/null; then
+    echo "Error: FFmpeg is not installed. Please install FFmpeg first."
+    exit 1
+fi
+
+# Function to convert WebP to JPEG
+convert_webp_to_jpeg() {
+    local webp_file="$1"
+    local jpeg_file="${webp_file%.webp}.jpg"
+
+    ffmpeg -i "$webp_file" -q:v 2 "$jpeg_file"
+}
+
+# Check if any arguments were provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <file1.webp> [file2.webp] ..."
+    exit 1
+fi
+
+# Loop through all arguments and convert WebP files to JPEG
+for file in "$@"; do
+    if [[ "$file" == *.webp ]]; then
+        convert_webp_to_jpeg "$file"
+        echo "Converted $file to ${file%.webp}.jpg"
+    else
+        echo "Skipping $file (not a WebP file)"
+    fi
+done

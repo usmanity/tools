@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
+
 import datetime
 """
-    Simply takes a unix time stamp and returns human readable date and time 
+    Simply takes a unix time stamp and returns human readable date and time
 """
 
 input_date = input('Timestamp to convert: ')

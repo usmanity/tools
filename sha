@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+import hashlib
+
+phrase = input("Phrase to hash: ")
+
+phrase_bytes = phrase.encode()
+
+sha = hashlib.sha256(phrase_bytes)
+
+print(sha.hexdigest())
