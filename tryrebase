@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+# Step 1: Get the current branch name
+current_branch=$(git symbolic-ref --short HEAD)
+
+# Step 2: Determine the target branch
+target_branch="main"  # Default to "main" branch
+if ! git show-ref --verify --quiet "refs/heads/$target_branch"; then
+  target_branch="master"  # Use "master" branch if "main" doesn't exist
+fi
+
+# Step 3: Pull the latest changes on the target branch
+echo "Switching to $target_branch branch..."
+git checkout $target_branch
+git pull origin $target_branch
+
+# Step 4: Go back to the original branch
+echo "Switching back to $current_branch branch..."
+git checkout $current_branch
+
+# Step 5: Rebase the original branch with the target branch
+echo "Rebasing $current_branch onto $target_branch..."
+git rebase $target_branch
+
+# Step 6: Check if the rebase encountered conflicts
+if [[ $? -ne 0 ]]; then
+  # Step 6: Rebase failed, cancel and inform the user
+  echo "Rebase failed. Cancelling the rebase..."
+  git rebase --abort
+  echo "Rebase cancelled."
+  exit 1
+fi
+
+# Step 7: Rebase successful
+echo "Rebase completed successfully."
+exit 0

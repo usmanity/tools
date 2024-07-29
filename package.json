@@ -1,7 +1,7 @@
 {
   "name": "tools",
-  "version": "1.0.0",
-  "description": "small scripts collected to do different things together",
+  "version": "2.0.0",
+  "description": "small scripts collected overtime, some are written by me and some by others",
   "main": "index.js",
   "repository": "git@github.com:usmanity/tools.git",
   "author": "Muhammad Usman <muhammad@usmanity.com>",
